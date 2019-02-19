@@ -1,9 +1,9 @@
 class Item {
-  final String id;
-  final String name;
-  final double price;
-  final int amount;
-  final bool completed;
+  String id;
+  String name;
+  double price;
+  int amount;
+  bool completed;
 
   Item({
     this.id,
@@ -24,7 +24,7 @@ class Item {
       name: json['name'],
       price:json['price'],
       amount: json['amount'],
-      completed: json['complete']
+      completed: json['completed']
     );
   }
 }

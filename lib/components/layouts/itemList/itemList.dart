@@ -4,7 +4,7 @@ import '../../../models/item.dart';
 
 class ItemList extends StatelessWidget {
   final List<Item> items;
-  ItemList({ Key key, this.items }) : super(key: key);
+  ItemList({ this.items });
 
   @override
   Widget build(BuildContext context) {

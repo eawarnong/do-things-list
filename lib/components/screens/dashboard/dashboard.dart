@@ -7,18 +7,18 @@ class Dashboard extends StatelessWidget {
 
   final mock = [
     {
-    "id": "1",
-    "name": "name1",
-    "price": 5.0,
-    "amount": 1,
-    "completed": false
+      "id": "1",
+      "name": "name1",
+      "price": 5.0,
+      "amount": 1,
+      "completed": false
     },
     {
-        "id": "2",
-        "name": "name2",
-        "price": 10.0,
-        "amount": 2,
-        "completed": false
+      "id": "2",
+      "name": "name2",
+      "price": 10.0,
+      "amount": 2,
+      "completed": false
     }
   ];
 
