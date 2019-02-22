@@ -2,14 +2,16 @@ class Item {
   String id;
   String name;
   double price;
-  int amount;
+  String currency;
+  int quantity;
   bool completed;
 
   Item({
     this.id,
     this.name,
     this.price,
-    this.amount,
+    this.currency,
+    this.quantity,
     this.completed
   });
 
@@ -23,7 +25,8 @@ class Item {
       id: json['id'],
       name: json['name'],
       price:json['price'],
-      amount: json['amount'],
+      currency: json['currency'],
+      quantity: json['quantity'],
       completed: json['completed']
     );
   }

@@ -8,11 +8,15 @@ class ItemList extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ListView.builder(
+    return ListView.separated(
+      padding: EdgeInsets.only(top: 10),
       itemCount: items.length,
       itemBuilder: (context, index) {
         return new ItemWidget(item: items[index]);
       },
+      separatorBuilder: (context, index) {
+        return Divider();
+      }
     );
   }
 }

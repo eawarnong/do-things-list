@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import '../textWidget/titleText/index.dart';
+import '../textWidget/amountCurrencyText/index.dart';
 import '../../../models/item.dart';
 
 class ItemWidget extends StatefulWidget {
@@ -19,13 +21,35 @@ class _ItemWidgetState extends State<ItemWidget> {
     });
   }
 
+  Widget _amountCurrencyText(double price) {
+    return AmountCurrencyText(price, _item.currency);
+  }
+
   @override
   Widget build(BuildContext context) {
     return CheckboxListTile(
       value: _item.completed,
       onChanged: _onCompletedChanged,
-      title: new Text(_item.name),
-      subtitle: new Text('price: ${_item.price} amount: ${_item.amount}'),
+      title: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: [
+          Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              TitleText(_item.name, true),
+              _amountCurrencyText(_item.price)
+            ]
+          ),
+          Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              TitleText('${_item.quantity} Qty', false),
+              _amountCurrencyText(_item.price*_item.quantity)
+            ]
+          )
+        ],
+      ),
+      controlAffinity: ListTileControlAffinity.leading,
     );
   }
 }
